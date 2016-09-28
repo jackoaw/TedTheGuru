@@ -1,0 +1,170 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color:#CCEEE1;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+#bio {
+	font-size: 14px;
+	font-family: "Times New Roman";
+	letter-spacing: 1px;
+	padding-top: 2px;
+	padding-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	vertical-align:bottom;
+	font-weight:lighter;
+}
+
+#posts {
+	font-size: 14px;
+	font-family: "Times New Roman";
+	letter-spacing: 1px;
+	padding-top: 10px;
+	padding-bottom:20px;
+	padding-left:10%;
+	padding-right:10%;
+	vertical-align:bottom;
+	font-weight:lighter;
+}
+
+#title {
+	font-size: 30px;
+	font-family: "Times New Roman";
+	letter-spacing: 2px;
+	padding-top: 15px;
+	text-transform: uppercase;
+	padding-left:20px;
+	padding-right:20px;
+	font-weight:bold;
+	text-align:left;
+}
+
+div#journey {
+	background-color: #F2F2F2;
+}
+
+
+#error{
+	color: red;
+	font-size: 8pt;
+}
+
+/*#txtHint {
+	
+	text-color: red;
+}*/
+
+.container {
+	padding: 0;
+	min-width: 100%;
+}
+	
+/*Navigation Button Layouts*/
+.NAVbutton {
+	text-decoration: none;
+	color: #eeeeee;
+	padding: 0px 5px;
+	font-family: sans-serif;
+}
+
+/*Have it be unchanged upon being visited*/
+.NAVbutton:visited {
+	color: #eeeeee;
+}
+
+/*For elements that start off visible*/
+.invisible{
+	visibility: hidden;
+	text-align: left;
+	padding-left:10%;
+}
+
+#postImage
+{
+	width: 40%;
+	height: 40%;
+}
+
+
+div#social-box li, div#email-box li{ 
+	display:block; 
+}
+
+div#email-box {
+	padding-top: 20px;
+	padding-left: 0px;
+}
+
+div#email-box label{
+	display: block;
+	margin-top: 10px;
+}
+
+div#email-box label strong{
+	font-size: 1em;
+}
+
+div#email-box li > input{ /*The text boxes that are direct children of list elements in the email box*/
+	width: 30%;
+}
+
+
+div#email-box select {
+	display: block;
+}
+
+div#email-box fieldset{
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+div#email-box fieldset label {
+	display:inline-block;
+}
+
+.error-message {
+	margin: .5em 0 0;
+	font-size: small;
+    display: block;
+    color: #dd4b39;
+    line-height: 10px;
+}
+
+.error-highlight {
+	border-color: red;
+}
+
+form#create-account input.available {
+  background-color: lightgreen;
+}
+
+form#create-account input.unavailable {
+  background-color: pink;
+}
+
+#ajaxComment.empty {
+  background-color: red;
+}
+
+div#footer {
+	color: #1D8374;
+	font-size: 10px;
+	letter-spacing: 1px;
+	padding-top: 150px;
+	padding-bottom: 5px;
+	vertical-align:bottom;
+	font-weight:lighter;
+	text-align:center;
+	vertical-align:bottom;
+}
+
+div#footer a:link {
+	color: #1D8374;
+}
+	

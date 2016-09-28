@@ -1,0 +1,74 @@
+Options -Indexes
+
+RewriteEngine on
+
+ErrorDocument 404 /public/NotFound.html
+RewriteCond %{REQUEST_METHOD} !POST [NC]
+
+# Site
+RewriteRule ^$ app/controller/siteController.php?action=home [QSA,L]
+RewriteRule ^about/?$ app/controller/siteController.php?action=about [QSA,L]
+RewriteRule ^EducateYourself/?$ app/controller/siteController.php?action=quizes&all=no [QSA,L]
+RewriteRule ^EducateYourself/(\d+)/?$ app/controller/siteController.php?action=quizes&all=no&quizID=$1 [QSA,L]
+RewriteRule ^EducateYourself/all?$ app/controller/siteController.php?action=quizes&all=yes [QSA,L]
+RewriteRule ^DailyQuote/?$ app/controller/siteController.php?action=quotes&all=no [QSA,L]
+RewriteRule ^DailyQuote/(\d+)/?$ app/controller/siteController.php?action=quotes&all=no&quoteID=$1 [QSA,L]
+RewriteRule ^DailyQuote/all?$ app/controller/siteController.php?action=quotes&all=yes [QSA,L]
+RewriteRule ^login/?$ app/controller/siteController.php?action=login [QSA,L]
+RewriteRule ^login/?$ app/controller/siteController.php?action=validate [QSA,L]
+RewriteRule ^logout/?$ app/controller/siteController.php?action=logout [QSA,L]
+RewriteRule ^info/?$ app/controller/siteController.php?action=info [QSA,L]
+RewriteRule ^signup/?$ app/controller/siteController.php?action=signup [QSA,L]
+RewriteRule ^signup/check?$ app/controller/siteController.php?action=signupCheck [QSA,L]
+RewriteRule ^profile/([_A-Z0-9a-z-+\.]+)/?$ app/controller/siteController.php?action=viewProfile&profile=$1 [QSA,L]
+RewriteRule ^follow/?$ app/controller/siteController.php?action=follow [QSA,L]
+RewriteRule ^unfollow/?$ app/controller/siteController.php?action=unfollow [QSA,L]
+RewriteRule ^profile/([_A-Z0-9a-z-+\.]+)/edit/?$ app/controller/siteController.php?action=editProfile&profile=$1 [QSA,L]
+
+# Profile
+RewriteRule ^edit/name/?$ app/controller/profileController.php?action=editName [QSA,L]
+RewriteRule ^edit/password/?$ app/controller/profileController.php?action=editPassword [QSA,L]
+RewriteRule ^edit/birthday/?$ app/controller/profileController.php?action=editBirthday [QSA,L]
+RewriteRule ^edit/about/?$ app/controller/profileController.php?action=editAbout [QSA,L]
+
+# Account Tools for Ted
+RewriteRule ^account/privileges/?$ app/controller/accountController.php?action=editPrivileges [QSA,L]
+RewriteRule ^account/delete/?$ app/controller/accountController.php?action=deleteAccount [QSA,L]
+RewriteRule ^account/privileges/?$ app/controller/accountController.php?action=submit [QSA,L]
+RewriteRule ^account/delete/?$ app/controller/accountController.php?action=submit [QSA,L]
+
+
+# Articles by Ted
+RewriteRule ^posts/(\d+)/?$ app/controller/articleController.php?action=post&postID=$1 [QSA,L]
+RewriteRule ^posts/?$ app/controller/articleController.php?action=post&postID=1 [QSA,L]
+RewriteRule ^posts/all/?$ app/controller/articleController.php?action=all [QSA,L]
+RewriteRule ^posts/all/json?$ app/controller/articleController.php?action=jsonAll [QSA,L]
+RewriteRule ^posts/create/?$ app/controller/articleController.php?action=create [QSA,L]
+RewriteRule ^posts/delete/?$ app/controller/articleController.php?action=delete [QSA,L]
+RewriteRule ^posts/edit/?$ app/controller/articleController.php?action=edit [QSA,L]
+RewriteRule ^posts/create?$ app/controller/articleController.php?action=submit [QSA,L]
+RewriteRule ^posts/delete?$ app/controller/articleController.php?action=submit [QSA,L]
+RewriteRule ^posts/edit?$ app/controller/articleController.php?action=submit [QSA,L]
+RewriteRule ^posts/(\d+)/comment/add/?$ app/controller/articleController.php?action=addComment&postID=$1 [QSA,L]
+
+#Quotes by Ted
+RewriteRule ^quotes/create/?$ app/controller/quoteController.php?action=create [QSA,L]
+RewriteRule ^quotes/delete/?$ app/controller/quoteController.php?action=delete [QSA,L]
+RewriteRule ^quotes/edit/?$ app/controller/quoteController.php?action=edit [QSA,L]
+RewriteRule ^quotes/create?$ app/controller/quoteController.php?action=submit [QSA,L]
+RewriteRule ^quotes/delete?$ app/controller/quoteController.php?action=submit [QSA,L]
+RewriteRule ^quotes/edit?$ app/controller/quoteController.php?action=submit [QSA,L]
+
+#Quizzes by Ted
+RewriteRule ^quiz/create/?$ app/controller/quizController.php?action=create [QSA,L]
+RewriteRule ^quiz/delete/?$ app/controller/quizController.php?action=delete [QSA,L]
+RewriteRule ^quiz/edit/?$ app/controller/quizController.php?action=edit [QSA,L]
+RewriteRule ^quiz/create?$ app/controller/quizController.php?action=submit [QSA,L]
+RewriteRule ^quiz/delete?$ app/controller/quizController.php?action=submit [QSA,L]
+RewriteRule ^quiz/edit?$ app/controller/quizController.php?action=submit [QSA,L]
+
+#GUI Edit
+RewriteRule ^posts/all/gui/edit?$ app/controller/GUIController.php [QSA,L]
+
+#WebGL 
+RewriteRule ^tedswalk?$ public/run/tedWalk.php [QSA,L]
